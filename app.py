@@ -42,7 +42,6 @@ class Venue(db.Model):
     facebook_link = db.Column(db.String(120))
 
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
-
     genres = db.Column(db.String())
     website = db.Column(db.String())
     seeking_talent = db.Column(db.Boolean)
@@ -80,9 +79,18 @@ class Artist(db.Model):
   #"start_time": "2019-05-21T21:30:00.000Z"
 #}],
 #"upcoming_shows": [],
-#    past_shows_count = db.Column(db.Integer)
-#    upcoming_shows_count = db.Column(db.Integer)
+    past_shows_count = db.Column(db.Integer) #might be able to get from above
+    upcoming_shows_count = db.Column(db.Integer)
+
 # TODO Implement Show and Artist models, and complete all model relationships and properties, as a database migration.
+class Show(db.Model):
+    __tablename__ = 'Show'
+    id = db.Column(db.Integer, primary_key=True)
+    start_time = db.Column(db.DateTime)
+    venue_id = db.Column(db.Integer, db.ForeignKey('Venue.id'), nullable=False)
+    venue_name = db.relationship('Venue', backref=db.backref('shows'))
+    artist_id = db.Column(db.Integer, db.ForeignKey('Artist.id'), nullable=False)
+    artist = db.relationship('Artist', backref=db.backref('shows'))
 
 #----------------------------------------------------------------------------#
 # Filters.
