@@ -44,7 +44,7 @@ class Venue(db.Model):
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
     genres = db.Column(db.String())
     website = db.Column(db.String())
-    seeking_talent = db.Column(db.Boolean)
+    seeking_talent = db.Column(db.String())
     seeking_description = db.Column(db.String())
 #"past_shows": [{
   #"artist_id": 4,
@@ -70,7 +70,7 @@ class Artist(db.Model):
 
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
     website = db.Column(db.String())
-    seeking_venue = db.Column(db.Boolean)
+    seeking_venue = db.Column(db.String())
     seeking_description = db.Column(db.String())
 #"past_shows": [{
 #  "venue_id": 1,
