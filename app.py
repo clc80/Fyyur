@@ -8,13 +8,13 @@ import babel
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.dialects.postgresql import ARRAY
 from flask_migrate import Migrate
 import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
 from forms import *
 
-import sys
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -44,7 +44,7 @@ class Venue(db.Model):
     facebook_link = db.Column(db.String(120))
 
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
-    genres = db.Column(db.String())
+    genres = db.Column(ARRAY(db.String()))
     website = db.Column(db.String())
     seeking_talent = db.Column(db.String())
     seeking_description = db.Column(db.String())
@@ -57,7 +57,7 @@ class Artist(db.Model):
     city = db.Column(db.String(120))
     state = db.Column(db.String(120))
     phone = db.Column(db.String(120))
-    genres = db.Column(db.String(120))
+    genres = db.Column(ARRAY(db.String(120)))
     image_link = db.Column(db.String(500))
     facebook_link = db.Column(db.String(120))
 
@@ -165,7 +165,6 @@ def show_venue(venue_id):
       "past_shows_count": len(past_show_data),
       "upcoming_shows_count": len(upcoming_show_data),
   }
-  print(data, file=sys.stdout.flush())
 
   for show in past_shows:
     artist = db.session.query(Artist.name, Artist.image_link).filter(Artist.id == show.artist_id).one()
@@ -179,7 +178,6 @@ def show_venue(venue_id):
         post_show_data.append(show_object)
     else:
         upcoming_show_data.append(show_object)
-
 
   return render_template('pages/show_venue.html', venue=data)
 
@@ -199,7 +197,7 @@ def create_venue_submission():
 
   venue = Venue(
     name = form.name.data,
-    genres = json.dumps(form.genres.data),  # array json
+    genres = form.genres.data,
     address = form.address.data,
     city = form.city.data,
     state = form.state.data,
