@@ -17,7 +17,9 @@ This app started out with the front end and was only missing one thing… real d
 
 ### Images of Site
 ![Main Site](https://thecoderpilot.com/fyyur/main.png)
-Format: ![Alt Text](url)
+![Artist Site](https://thecoderpilot.com/fyyur/artist.png)
+![Venue Site](https://thecoderpilot.com/fyyur/venue.png)
+![Show Site](https://thecoderpilot.com/fyyur/shows.png)
 ### Tech Stack
 
 Our tech stack includes:
