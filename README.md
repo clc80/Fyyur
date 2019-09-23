@@ -77,4 +77,4 @@ Overall:
   $ export FLASK_ENV=development # enables debug mode
   $ python3 app.py
   ```
-  * Navigate to Home page [http://localhost:5000](http://localhost:5000)
+* Navigate to Home page [http://localhost:5000](http://localhost:5000)
