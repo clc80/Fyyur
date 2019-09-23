@@ -16,7 +16,7 @@ This app started out with the front end and was only missing one thing… real d
 * learning more about a specific artist or venue.
 
 ### Images of Site
-![Main Site](https://thecoderpilot.com/fyyur/main.png)
+![Main Site](https://thecoderpilot.com/fyyur/mains.png)
 
 ![Artist Site](https://thecoderpilot.com/fyyur/artist.png)
 
