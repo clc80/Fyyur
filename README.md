@@ -72,8 +72,8 @@ Overall:
 * If you want to use virtualenv: ```virtualenv ENV && source ENV/bin/activate```
 * Install dependencies with pip: ```pip install -r requirements.txt```
 * Connect your local database
- * in app.py ```app.config['SQLALCHEMY_DATABASE_URI'] = '<your database>'```
- * in config.py ```SQLALCHEMY_DATABASE_URI = '<your database>'```
+  * in app.py ```app.config['SQLALCHEMY_DATABASE_URI'] = '<your database>'```
+  * in config.py ```SQLALCHEMY_DATABASE_URI = '<your database>'```
 * Run the development server:
   ```
   $ export FLASK_APP=myapp
