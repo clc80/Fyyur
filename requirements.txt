@@ -1,6 +1,9 @@
+alembic
 babel
 python-dateutil==2.6.0
+Flask
+Flask-Migrate
 flask-moment
 flask-wtf
 flask-sqlalchemy
-sqlalchemy_utils
+WTForms
