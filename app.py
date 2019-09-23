@@ -441,11 +441,11 @@ def delete_artist(artist_id):
         db.session.query(Artist).filter(Artist.id == artist_id).delete()
         db.session.commit()
         flash('Artist was successfully deleted!')
-     except:
+    except:
          flash('An error occurred. Artist could not be deleted.')
-     finally:
+    finally:
          db.session.close()
-     return redirect(url_for('artist'))
+    return redirect(url_for('artist'))
 
 #  Shows
 #  ----------------------------------------------------------------
