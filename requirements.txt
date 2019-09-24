@@ -7,3 +7,4 @@ flask-moment
 flask-wtf
 flask-sqlalchemy
 WTForms
+flask_migrate
