@@ -1,10 +1,15 @@
 alembic
 babel
 python-dateutil==2.6.0
+dateutil.parser
+datetime
 Flask
+flask
 Flask-Migrate
-flask-moment
+flask_moment
 flask-wtf
-flask-sqlalchemy
+flask_sqlalchemy
 WTForms
 flask_migrate
+sqlalchemy.dialects.postgresql
+forms
