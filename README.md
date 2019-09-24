@@ -16,10 +16,14 @@ This app started out with the front end and was only missing one thing… real d
 * learning more about a specific artist or venue.
 
 ### Images of Site
-![Main Site](https://thecoderpilot.com/fyyur/main.png)
+![Main Site](https://thecoderpilot.com/fyyur/mains.png)
+
 ![Artist Site](https://thecoderpilot.com/fyyur/artist.png)
+
 ![Venue Site](https://thecoderpilot.com/fyyur/venue.png)
+
 ![Show Site](https://thecoderpilot.com/fyyur/shows.png)
+
 ### Tech Stack
 
 Our tech stack includes:
@@ -60,35 +64,20 @@ Overall:
 * The web frontend is located in `templates/`, which builds static assets deployed to the web server at `static/`.
 * Web forms for creating data are located in `form.py`
 
-
-### Development Setup
-
-First, [install Flask](http://flask.pocoo.org/docs/1.0/installation/#install-flask) if you haven't already.
-
-  ```
-  $ cd ~
-  $ sudo pip3 install Flask
-  ```
-
-To start and run the local development server,
-
-1. Initialize and activate a virtualenv:
-  ```
-  $ cd YOUR_PROJECT_DIRECTORY_PATH/
-  $ virtualenv --no-site-packages env
-  $ source env/bin/activate
-  ```
-
-2. Install the dependencies:
-  ```
-  $ pip install -r requirements.txt
-  ```
-
-3. Run the development server:
+### Getting Started
+* Clone this repository.
+* Clone this repo: 
+```git clone git@github.com:clc80/Fyyur.git```
+* Change to the repo directory: ```cd Fyyur```
+* If you want to use virtualenv: ```virtualenv ENV && source ENV/bin/activate```
+* Install dependencies with pip: ```pip install -r requirements.txt```
+* Connect your local database
+  * in app.py ```app.config['SQLALCHEMY_DATABASE_URI'] = '<your database>'```
+  * in config.py ```SQLALCHEMY_DATABASE_URI = '<your database>'```
+* Run the development server:
   ```
   $ export FLASK_APP=myapp
   $ export FLASK_ENV=development # enables debug mode
   $ python3 app.py
   ```
-
-4. Navigate to Home page [http://localhost:5000](http://localhost:5000)
+* Navigate to Home page [http://localhost:5000](http://localhost:5000)
