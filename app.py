@@ -27,7 +27,7 @@ moment = Moment(app)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-
+db.create_all()
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://clmaciel@localhost:5432/fyyur'
 #----------------------------------------------------------------------------#
 # Models.
@@ -75,6 +75,7 @@ class Show(db.Model):
     artist_id = db.Column(db.Integer, db.ForeignKey('Artist.id'), nullable=False)
     artist = db.relationship('Artist', backref=db.backref('shows'))
 
+db.create_all()
 #----------------------------------------------------------------------------#
 # Filters.
 #----------------------------------------------------------------------------#
